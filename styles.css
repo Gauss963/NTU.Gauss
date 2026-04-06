@@ -492,6 +492,10 @@ ol {
     display: flex;
   }
 
+  .site-nav span[aria-hidden="true"] {
+    display: none;
+  }
+
   .timeline-item,
   .publication-feature {
     grid-template-columns: minmax(0, 1fr);

@@ -262,6 +262,23 @@ body.article-page li + li {
 }
 
 @media (max-width: 720px) {
+  body.article-page .site-header .site-nav {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding-top: 10px;
+  }
+
+  body.article-page .site-header .site-nav.is-open {
+    display: flex;
+  }
+
+  body.article-page .site-header .site-nav span[aria-hidden="true"] {
+    display: none;
+  }
+
   body.article-page .page.article-layout,
   body.article-page .container.article-layout {
     width: 100%;
