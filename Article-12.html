@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Changing the Way We Listen to Music | Gauss Te-Chuan Chang</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        :root {
+            --bg: #f4f5f7;
+            --surface: #ffffff;
+            --surface-soft: #f8fafc;
+            --text: #1f2937;
+            --muted: #6b7280;
+            --line: #dbe1ea;
+            --accent: #1d4f91;
+            --shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Georgia, "Times New Roman", serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.9;
+        }
+
+        .page { width: min(960px, calc(100% - 2rem)); margin: 2rem auto 3rem; }
+        .article-shell { background: var(--surface); border: 1px solid var(--line); border-radius: 24px; box-shadow: var(--shadow); overflow: hidden; }
+        .hero { padding: 3rem 3rem 2rem; background: radial-gradient(circle at top left, rgba(29,79,145,0.12), transparent 35%), linear-gradient(180deg,#ffffff,#f8fafc); border-bottom: 1px solid var(--line); }
+        .eyebrow { display:inline-block; margin-bottom:0.9rem; padding:0.28rem 0.68rem; border-radius:999px; background:rgba(29,79,145,0.1); color:var(--accent); font:700 0.8rem/1.1 "Avenir Next","Segoe UI",Arial,sans-serif; letter-spacing:0.08em; text-transform:uppercase; }
+        h1 { margin:0; font-size:clamp(2.2rem,4vw,3.4rem); line-height:1.15; color:#10233e; }
+        .meta { margin-top:0.8rem; color:var(--muted); font:0.98rem/1.6 "Avenir Next","Segoe UI",Arial,sans-serif; }
+        .lead { margin-top:1.3rem; max-width:42em; color:#334155; font-size:1.08rem; }
+        .content { padding:2rem 3rem 3rem; }
+        .callout, figure { margin:1.5rem 0 1.9rem; padding:1.1rem 1.2rem; background:var(--surface-soft); border:1px solid var(--line); border-radius:16px; color:#334155; }
+        .callout { border-left:4px solid var(--accent); }
+        h2 { margin:2.5rem 0 1rem; padding-top:1.4rem; border-top:1px solid var(--line); font-size:1.7rem; line-height:1.2; color:#10233e; }
+        h2:first-of-type { margin-top:0; padding-top:0; border-top:0; }
+        p { margin:0 0 1.2rem; }
+        figure object { display:block; width:100%; height:520px; border:1px solid var(--line); border-radius:12px; background:#ffffff; }
+        figcaption { margin-top:0.8rem; color:var(--muted); font:0.92rem/1.6 "Avenir Next","Segoe UI",Arial,sans-serif; text-align:center; }
+        .back { display:inline-block; margin-top:1.6rem; font:600 0.96rem/1.2 "Avenir Next","Segoe UI",Arial,sans-serif; }
+        a { color:var(--accent); text-decoration:none; }
+        a:hover { text-decoration:underline; }
+        @media (max-width:760px) {
+            .page { width:calc(100% - 1rem); margin:1rem auto 2rem; }
+            .hero, .content { padding:1.2rem; }
+            h2 { font-size:1.4rem; }
+            figure object { height:360px; }
+            .lead, .callout, p { font-size:0.98rem; }
+        }
+    </style>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="article.css">
+    <!-- <link rel="stylesheet" href="dark-mode.css"> -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MTX5M07K9R"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-MTX5M07K9R');
+</script>
+</head>
+
+<body class="article-page no-cover template-prose">
+    <!--
+    <input type="checkbox" id="theme-toggle" class="theme-toggle-checkbox" aria-label="Toggle dark theme">
+    <label for="theme-toggle" class="theme-toggle-button">
+        <span class="theme-toggle-off">Dark</span>
+        <span class="theme-toggle-on">Light</span>
+    </label>
+    -->
+
+    <div class="page-shell">
+        <header class="site-header">
+            <div class="brand">
+                <a href="index.html" class="brand-mark" aria-label="National Taiwan University home">
+                    <img src="images/logo/NTU-logo.svg" alt="National Taiwan University logo" class="brand-logo" />
+                </a>
+                <div>
+                    <p class="eyebrow">National Taiwan University</p>
+                    <a href="index.html" class="brand-name">Gauss Chang</a>
+                </div>
+            </div>
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+            <nav id="site-nav" class="site-nav" aria-label="Primary navigation">
+                <a href="index.html">Home</a>
+                <a href="CV.html">CV</a>
+                <a href="Projects.html">Projects</a>
+                <a href="Articles.html" aria-current="page">Articles</a>
+                <a href="index.html#contact">Contact</a>
+                <span aria-hidden="true">|</span>
+                <a href="https://www.ntu.edu.tw" target="_blank" rel="noopener noreferrer">NTU</a>
+            </nav>
+        </header>
+
+    <main class="page article-layout">
+        <article class="article-shell">
+            <header class="hero article-hero">
+                <span class="eyebrow">Essay</span>
+                <h1>Changing the Way We Listen to Music</h1>
+                <div class="meta">Posted on 2022-08-08 · English version of a Chinese essay</div>
+                <p class="lead">In an age when streaming seems to have absorbed music entirely, it may be worth asking whether the way we listen also shapes the lives of artists, the meaning of albums, and the future of music itself.</p>
+            </header>
+
+            <div class="content article-content">
+                <h2>Streaming Can Fill Every Blank in Daily Life</h2>
+                <p>Streaming has made music faster, more accessible, and vastly more profitable for platforms, but it has also narrowed the space in which musicians can survive. Take iTunes as a simple example: if a song sells for 0.99 USD, the artist may receive around 0.5 USD, depending on the region. Streaming services, by contrast, pay according to play counts. Rates vary from platform to platform, but the revenue generally falls far short of what digital downloads once provided. It is also estimated that on Spotify alone, roughly four million tracks have never been played even once.</p>
+                <figure>
+                    <object data="改變聽音樂的習慣/Money_Too_Tight_To_Mention_2018.pdf" type="application/pdf">
+                        <a href="改變聽音樂的習慣/Money_Too_Tight_To_Mention_2018.pdf">Open chart PDF</a>
+                    </object>
+                    <figcaption>Revenue sharing per stream or sale across major platforms</figcaption>
+                </figure>
+                <p>A quick calculation makes it obvious that only a very small portion of your monthly subscription fee ever reaches the musicians themselves. Most of it remains in the hands of the platform.</p>
+                <p>Even so, these numbers already reflect the situation after Spotify fought its way to profitability and after Apple Music publicly raised its payout rate. Even under those improved conditions, the result is hardly ideal for creators. That is why I would recommend, at least for a while, stepping outside the grip of streaming platforms and returning to a more traditional relationship with music. It may be a healthier way to listen, and perhaps a healthier environment for music as well.</p>
+
+                <div class="callout">As of August 8, 2022, I had purchased 513 songs on iTunes, for a total of NT$10,260. My first purchase was made on August 8, 2017, and the highest play count in my library was 763. Had I simply subscribed to the standard Apple Music plan over the same period, I would have spent NT$10,800. For me, streaming was not actually the cheaper option.</div>
+
+                <h2>The Medium of Music</h2>
+                <p>Apple launched Apple Music in 2015. Spotify went public in 2018. It was already clear then that streaming was rushing in to satisfy the need for music in an increasingly busy world. The medium of listening had evolved once again. From vinyl to cassette, from CD to digital albums and then to streaming, each format has eventually been surpassed and replaced. Every transition leaves some people dissatisfied. Even now, people still say that vinyl carries warmth, or that CDs offer the best sound quality. These claims are not baseless. Vinyl can indeed preserve more nuance under the right conditions, and a CD file measured in hundreds of megabytes clearly holds an advantage in sampling quality over a downloaded track under 20 MB from iTunes. But none of these strengths can resist the larger historical trend: music formats keep becoming smaller, lighter, and easier to carry. Streaming is likely to dominate in the end. But before every avenue of digital purchase disappears, we still retain the right to choose.</p>
+
+                <div class="callout">No one can reverse the current of the age, but it is not a bad thing to preserve the freedom to choose.</div>
+
+                <h2>Shuffle</h2>
+                <p>One of the defining wishes of the digital age was the ability to buy individual songs without restrictions, and that wish has long since been fulfilled. Most people find at least a few tracks on any album unnecessary. With iTunes, that was not much of a problem, because buying the whole album was usually cheaper than selecting every song individually while skipping the ones you did not want. But if you liked only one or two tracks, buying singles was an excellent way to save money. Once your library becomes a pile of songs pulled from all kinds of different albums, the question of how to play them becomes important. If you listened alphabetically every day, you would get tired of it very quickly. So for most people, the answer is shuffle.</p>
+                <p>Spotify, the market leader, conquered listeners so quickly because of what feels like its signature talent: mind reading. Anyone who has used it knows how good it can be at recommending songs that are pleasant, addictive, and uncannily aligned with your taste. One recommended song after another gets added to a playlist. As a result, many people no longer spend their days listening to carefully arranged albums. Instead, they listen to endless algorithmic mix tapes assembled to fit a mood and keep the stream going.</p>
+
+                <h2>Start from the Beginning</h2>
+                <p>An album is like an essay, or a film, or a complete story. It has an intended structure, a beginning, a development, a turn, and a conclusion. No one watches only one scene of a film or reads ten random pages of a book and claims to have understood the whole. Artists put enormous thought into writing songs, and shaping those songs into a complete album is not easy. Sometimes the process takes years. An album may have only one or two main singles, but that does not mean the rest are merely background. Every song is a meaningful chapter.</p>
+                <p>You may stumble across a song by chance, or hear one because a friend recommended it. Even so, I would still urge you to listen to the whole album from start to finish. Very often, that is how you discover even better music. Most of the songs I love most were found in exactly that way.</p>
+
+                <div class="callout">Streaming can certainly fill the empty spaces in life. But life does not contain that many empty spaces to begin with. And if it does, perhaps the answer is not more background music, but a fuller life.</div>
+
+            </div>
+        </article>
+    </main>
+        <footer class="site-footer">
+            <p>© 2026 Gauss Chang.</p>
+            <a href="Articles.html">Articles</a>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

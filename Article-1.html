@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Article 1 | Gauss Te-Chuan Chang</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f4f6f8;
+            color: #222;
+            line-height: 1.7;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+        }
+
+        header {
+            margin-bottom: 30px;
+        }
+
+        header h1 {
+            margin-bottom: 5px;
+            color: #002147;
+            line-height: 1.35;
+            word-break: break-word;
+        }
+
+        .meta {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        figure {
+            margin: 30px auto;
+            text-align: center;
+        }
+
+        figure img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ccc;
+        }
+
+        figcaption {
+            font-size: 0.9rem;
+            color: #555;
+            margin-top: 8px;
+        }
+
+        a {
+            color: #1a73e8;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .back {
+            margin-top: 40px;
+            display: inline-block;
+        }
+        @media (max-width: 900px) {
+            .container {
+                margin: 18px auto;
+                width: calc(100% - 24px);
+                padding: 24px;
+            }
+        }
+        @media (max-width: 640px) {
+            body {
+                line-height: 1.65;
+            }
+
+            .container {
+                width: calc(100% - 16px);
+                margin: 10px auto;
+                padding: 16px;
+                border-radius: 6px;
+            }
+
+            header h1 {
+                font-size: 1.35rem;
+                margin-bottom: 8px;
+            }
+
+            .meta {
+                font-size: 0.9rem;
+            }
+
+            h2 {
+                margin-top: 28px;
+                font-size: 1.2rem;
+            }
+
+            p,
+            li {
+                font-size: 0.97rem;
+            }
+
+            figure {
+                margin: 20px auto;
+            }
+
+            .summary-img {
+                width: 100%;
+            }
+
+            blockquote {
+                margin: 20px 0;
+                padding: 12px 14px;
+            }
+
+            .link-card {
+                padding: 14px;
+                margin-bottom: 12px;
+            }
+
+            .back {
+                margin-top: 28px;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="article.css">
+    <!-- <link rel="stylesheet" href="dark-mode.css"> -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MTX5M07K9R"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-MTX5M07K9R');
+</script>
+</head>
+
+<body class="article-page no-cover template-prose">
+    <!--
+    <input type="checkbox" id="theme-toggle" class="theme-toggle-checkbox" aria-label="Toggle dark theme">
+    <label for="theme-toggle" class="theme-toggle-button">
+        <span class="theme-toggle-off">Dark</span>
+        <span class="theme-toggle-on">Light</span>
+    </label>
+    -->
+
+    <div class="page-shell">
+        <header class="site-header">
+            <div class="brand">
+                <a href="index.html" class="brand-mark" aria-label="National Taiwan University home">
+                    <img src="images/logo/NTU-logo.svg" alt="National Taiwan University logo" class="brand-logo" />
+                </a>
+                <div>
+                    <p class="eyebrow">National Taiwan University</p>
+                    <a href="index.html" class="brand-name">Gauss Chang</a>
+                </div>
+            </div>
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+            <nav id="site-nav" class="site-nav" aria-label="Primary navigation">
+                <a href="index.html">Home</a>
+                <a href="CV.html">CV</a>
+                <a href="Projects.html">Projects</a>
+                <a href="Articles.html" aria-current="page">Articles</a>
+                <a href="index.html#contact">Contact</a>
+                <span aria-hidden="true">|</span>
+                <a href="https://www.ntu.edu.tw" target="_blank" rel="noopener noreferrer">NTU</a>
+            </nav>
+        </header>
+
+    <main class="container article-layout">
+
+        <header class="article-hero">
+            <h1>Article 1: Example Article with Figures</h1>
+            <div class="meta">
+                Posted on 2025-01-01 · Gauss Te-Chuan Chang
+            </div>
+        </header>
+
+        <p>
+            This article demonstrates how figures can be included in a static HTML article.
+            The structure is designed to resemble a technical or academic note.
+        </p>
+
+        <h2>1. Introduction</h2>
+        <p>
+            This section introduces the background and motivation of the topic.
+        </p>
+
+        <h2>2. Example Figure</h2>
+
+        <figure>
+            <img src="images/london.jpg" alt="Example figure">
+            <figcaption>
+                Figure 1. Example image used in Article 1.
+            </figcaption>
+        </figure>
+
+        <p>
+            The figure above can represent simulation results, experimental setups,
+            or conceptual diagrams.
+        </p>
+
+        <h2>3. Discussion</h2>
+        <p>
+            You can continue writing your article using standard HTML elements such as
+            paragraphs, lists, equations (via images), and code blocks.
+        </p>
+
+    </main>
+
+        <footer class="site-footer">
+            <p>© 2026 Gauss Chang.</p>
+            <a href="Articles.html">Articles</a>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
