@@ -414,6 +414,84 @@ ol {
   gap: 28px;
 }
 
+.contact-summary {
+  display: grid;
+  gap: 14px;
+}
+
+.summary-card {
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--line);
+}
+
+.summary-card:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.summary-card p:last-child {
+  margin-bottom: 0;
+}
+
+.contact-page-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(300px, 0.9fr);
+  gap: 32px;
+  align-items: start;
+}
+
+.map-card {
+  position: relative;
+}
+
+.contact-map,
+.map-fallback {
+  min-height: 460px;
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+.contact-map {
+  background:
+    radial-gradient(circle at top left, rgba(23, 54, 93, 0.12), transparent 30%),
+    linear-gradient(180deg, #f8fafc, #f1f4f8);
+}
+
+.map-fallback {
+  display: grid;
+  place-items: center;
+  padding: 32px;
+  background:
+    radial-gradient(circle at top left, rgba(23, 54, 93, 0.08), transparent 32%),
+    linear-gradient(180deg, #fbfcfd, #f4f6f8);
+}
+
+.map-fallback[hidden],
+.contact-map[hidden] {
+  display: none;
+}
+
+.map-fallback-inner {
+  width: min(100%, 31rem);
+}
+
+.map-copy-button {
+  border: 1px solid var(--line-strong);
+  background: #ffffff;
+  color: var(--text);
+  padding: 10px 14px;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.2;
+  cursor: pointer;
+}
+
+.map-copy-button:hover,
+.map-copy-button:focus-visible {
+  background: #f5f5f5;
+}
+
 .contact-list,
 .plain-list {
   margin: 0;
@@ -464,6 +542,7 @@ ol {
   .hero,
   .two-column,
   .research-grid,
+  .contact-page-grid,
   .contact-layout,
   .summary-grid {
     grid-template-columns: minmax(0, 1fr);
@@ -504,6 +583,12 @@ ol {
   .publication-feature {
     grid-template-columns: minmax(0, 1fr);
     gap: 8px;
+  }
+
+  .contact-map,
+  .map-fallback {
+    min-height: 360px;
+    border-radius: 18px;
   }
 
   .publication-image {
