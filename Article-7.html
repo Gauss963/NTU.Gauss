@@ -135,6 +135,18 @@
             color: #10233e;
         }
 
+        .rank {
+            display: inline-block;
+            margin-bottom: 0.8rem;
+            padding: 0.22rem 0.6rem;
+            border-radius: 999px;
+            background: #10233e;
+            color: #ffffff;
+            font: 700 0.78rem/1.1 "Avenir Next", "Segoe UI", Arial, sans-serif;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
         .movie-copy p {
             margin: 0;
         }
@@ -190,9 +202,7 @@
             }
         }
     </style>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="article.css">
-    <!-- <link rel="stylesheet" href="dark-mode.css"> -->
+    <link rel="stylesheet" href="dark-mode.css">
 
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-MTX5M07K9R"></script>
@@ -203,42 +213,20 @@
 
     gtag('config', 'G-MTX5M07K9R');
 </script>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="legacy-theme.css" />
 </head>
 
-<body class="article-page no-cover template-ranking">
-    <!--
+<body>
     <input type="checkbox" id="theme-toggle" class="theme-toggle-checkbox" aria-label="Toggle dark theme">
     <label for="theme-toggle" class="theme-toggle-button">
         <span class="theme-toggle-off">Dark</span>
         <span class="theme-toggle-on">Light</span>
     </label>
-    -->
 
-    <div class="page-shell">
-        <header class="site-header">
-            <div class="brand">
-                <a href="index.html" class="brand-mark" aria-label="National Taiwan University home">
-                    <img src="images/logo/NTU-logo.svg" alt="National Taiwan University logo" class="brand-logo" />
-                </a>
-                <div>
-                    <p class="eyebrow">National Taiwan University</p>
-                    <a href="index.html" class="brand-name">Gauss Chang</a>
-                </div>
-            </div>
-            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
-            <nav id="site-nav" class="site-nav" aria-label="Primary navigation">
-                <a href="index.html">Home</a>
-                <a href="CV.html">CV</a>
-                <a href="Projects.html">Projects</a>
-                <a href="Articles.html" aria-current="page">Articles</a>
-                <a href="index.html#contact">Contact</a>
-                      <a href="https://www.ntu.edu.tw" target="_blank" rel="noopener noreferrer">NTU</a>
-            </nav>
-        </header>
-
-    <main class="page article-layout">
+    <main class="page">
         <article class="article-shell">
-            <header class="hero article-hero">
+            <header class="hero">
                 <span class="eyebrow">Personal Favorites</span>
                 <h1>My TOP 3 Movie</h1>
                 <div class="meta">Posted on 2026-04-03 · Keywords: Movies, Personal Favorites</div>
@@ -249,7 +237,7 @@
                 </p>
             </header>
 
-            <div class="content article-content">
+            <div class="content">
                 <p class="intro">
                     This list is not based on objective greatness. It is simply a personal ranking of films
                     that have stayed with me for a long time, whether because of their atmosphere, their
@@ -318,17 +306,11 @@
                     movies that create a strong atmosphere and leave room for feeling, reflection, and memory.
                 </p>
 
+                <a class="back" href="Articles.html">← Back to Articles</a>
             </div>
         </article>
     </main>
-        <footer class="site-footer">
-            <p>© 2026 Gauss Chang.</p>
-            <a href="Articles.html">Articles</a>
-        </footer>
-    </div>
-
-    <script src="script.js"></script>
-
+    <script src="legacy-shell.js"></script>
 </body>
 
 </html>

@@ -178,9 +178,7 @@
             }
         }
     </style>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="article.css">
-    <!-- <link rel="stylesheet" href="dark-mode.css"> -->
+    <link rel="stylesheet" href="dark-mode.css">
 
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-MTX5M07K9R"></script>
@@ -191,49 +189,27 @@
 
     gtag('config', 'G-MTX5M07K9R');
 </script>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="legacy-theme.css" />
 </head>
 
-<body class="article-page article-page--zh no-cover template-prose">
-    <!--
+<body>
     <input type="checkbox" id="theme-toggle" class="theme-toggle-checkbox" aria-label="Toggle dark theme">
     <label for="theme-toggle" class="theme-toggle-button">
         <span class="theme-toggle-off">Dark</span>
         <span class="theme-toggle-on">Light</span>
     </label>
-    -->
 
-    <div class="page-shell">
-        <header class="site-header">
-            <div class="brand">
-                <a href="index.html" class="brand-mark" aria-label="National Taiwan University home">
-                    <img src="images/logo/NTU-logo.svg" alt="National Taiwan University logo" class="brand-logo" />
-                </a>
-                <div>
-                    <p class="eyebrow">National Taiwan University</p>
-                    <a href="index.html" class="brand-name">Gauss Chang</a>
-                </div>
-            </div>
-            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
-            <nav id="site-nav" class="site-nav" aria-label="Primary navigation">
-                <a href="index.html">Home</a>
-                <a href="CV.html">CV</a>
-                <a href="Projects.html">Projects</a>
-                <a href="Articles.html" aria-current="page">Articles</a>
-                <a href="index.html#contact">Contact</a>
-                      <a href="https://www.ntu.edu.tw" target="_blank" rel="noopener noreferrer">NTU</a>
-            </nav>
-        </header>
-
-    <main class="page article-layout">
+    <main class="page">
         <article class="article-shell">
-            <header class="hero article-hero">
+            <header class="hero">
                 <span class="eyebrow">Essay</span>
                 <h1>整個城市，都是我的自習室</h1>
                 <div class="meta">Posted on 2024-05-04 · 張德權 · Student at Department of Physics, National Taiwan University</div>
                 <p class="lead">四月的暴雨、五月的太陽，都讓人只想待在有空調的室內。前幾天開車經過國圖才發現我已經好幾年沒進國圖自習室了。</p>
             </header>
 
-            <div class="content article-content">
+            <div class="content">
                 <p class="intro">我去自習室的時光與我的高中、大學階段幾乎完全重疊，不同的圖書館各自代表了我念書的不同時期。</p>
 
                 <h2>臺北市立圖書館總館</h2>
@@ -295,18 +271,12 @@
                 <p>追憶自習室的時光，每個階段都有獨特的意義。從國中到大學，從台北市立圖書館總館、國家圖書館、復興實中圖書館到臺灣大學圖書館。這些圖書館見證了我一路走來的喜怒哀樂，是青澀的學生時代難以抹滅的一部分。</p>
                 <p>現在我終於撐過那段被課業壓力毒打的時光，偶爾的偶爾我還是會在夢中回到那個準備學測的檯燈前、那個可以看到建國高架的樓梯間；我並沒有因此變的抗拒圖書館，我依然愛著這充滿書香、老人、備考生的一片天地。</p>
 
+                <a class="back" href="Articles.html">← Back to Articles</a>
             </div>
         </article>
     </main>
 
-        <footer class="site-footer">
-            <p>© 2026 Gauss Chang.</p>
-            <a href="Articles.html">Articles</a>
-        </footer>
-    </div>
-
-    <script src="script.js"></script>
-
+    <script src="legacy-shell.js"></script>
 </body>
 
 </html>

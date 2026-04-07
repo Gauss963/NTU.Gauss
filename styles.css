@@ -127,7 +127,11 @@ ol {
   background: #fff;
   color: var(--text);
   padding: 8px 12px;
-  font: inherit;
+  align-self: center;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: 0.96rem;
+  font-weight: 500;
+  line-height: 1.2;
   cursor: pointer;
 }
 

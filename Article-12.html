@@ -56,9 +56,7 @@
             .lead, .callout, p { font-size:0.98rem; }
         }
     </style>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="article.css">
-    <!-- <link rel="stylesheet" href="dark-mode.css"> -->
+    <link rel="stylesheet" href="dark-mode.css">
 
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-MTX5M07K9R"></script>
@@ -69,49 +67,27 @@
 
     gtag('config', 'G-MTX5M07K9R');
 </script>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="legacy-theme.css" />
 </head>
 
-<body class="article-page no-cover template-prose">
-    <!--
+<body>
     <input type="checkbox" id="theme-toggle" class="theme-toggle-checkbox" aria-label="Toggle dark theme">
     <label for="theme-toggle" class="theme-toggle-button">
         <span class="theme-toggle-off">Dark</span>
         <span class="theme-toggle-on">Light</span>
     </label>
-    -->
 
-    <div class="page-shell">
-        <header class="site-header">
-            <div class="brand">
-                <a href="index.html" class="brand-mark" aria-label="National Taiwan University home">
-                    <img src="images/logo/NTU-logo.svg" alt="National Taiwan University logo" class="brand-logo" />
-                </a>
-                <div>
-                    <p class="eyebrow">National Taiwan University</p>
-                    <a href="index.html" class="brand-name">Gauss Chang</a>
-                </div>
-            </div>
-            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
-            <nav id="site-nav" class="site-nav" aria-label="Primary navigation">
-                <a href="index.html">Home</a>
-                <a href="CV.html">CV</a>
-                <a href="Projects.html">Projects</a>
-                <a href="Articles.html" aria-current="page">Articles</a>
-                <a href="index.html#contact">Contact</a>
-                      <a href="https://www.ntu.edu.tw" target="_blank" rel="noopener noreferrer">NTU</a>
-            </nav>
-        </header>
-
-    <main class="page article-layout">
+    <main class="page">
         <article class="article-shell">
-            <header class="hero article-hero">
+            <header class="hero">
                 <span class="eyebrow">Essay</span>
                 <h1>Changing the Way We Listen to Music</h1>
                 <div class="meta">Posted on 2022-08-08 · English version of a Chinese essay</div>
                 <p class="lead">In an age when streaming seems to have absorbed music entirely, it may be worth asking whether the way we listen also shapes the lives of artists, the meaning of albums, and the future of music itself.</p>
             </header>
 
-            <div class="content article-content">
+            <div class="content">
                 <h2>Streaming Can Fill Every Blank in Daily Life</h2>
                 <p>Streaming has made music faster, more accessible, and vastly more profitable for platforms, but it has also narrowed the space in which musicians can survive. Take iTunes as a simple example: if a song sells for 0.99 USD, the artist may receive around 0.5 USD, depending on the region. Streaming services, by contrast, pay according to play counts. Rates vary from platform to platform, but the revenue generally falls far short of what digital downloads once provided. It is also estimated that on Spotify alone, roughly four million tracks have never been played even once.</p>
                 <figure>
@@ -140,17 +116,11 @@
 
                 <div class="callout">Streaming can certainly fill the empty spaces in life. But life does not contain that many empty spaces to begin with. And if it does, perhaps the answer is not more background music, but a fuller life.</div>
 
+                <a class="back" href="Articles.html">← Back to Articles</a>
             </div>
         </article>
     </main>
-        <footer class="site-footer">
-            <p>© 2026 Gauss Chang.</p>
-            <a href="Articles.html">Articles</a>
-        </footer>
-    </div>
-
-    <script src="script.js"></script>
-
+    <script src="legacy-shell.js"></script>
 </body>
 
 </html>

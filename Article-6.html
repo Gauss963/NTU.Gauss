@@ -5,84 +5,198 @@
     <meta charset="UTF-8">
     <title>Japan Geoscience Union Meeting 2026 | Gauss Te-Chuan Chang</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="article.css">
 
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MTX5M07K9R"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'G-MTX5M07K9R');
-    </script>
+    <style>
+        :root {
+            --bg: #f5f5f7;
+            --surface: #ffffff;
+            --text: #1d1d1f;
+            --muted: #6e6e73;
+            --line: #e2e2e7;
+            --accent: #1d4f91;
+            --shadow: 0 14px 30px rgba(15, 23, 42, 0.07);
+            --radius: 18px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Avenir Next", "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.65;
+        }
+
+        .container {
+            width: min(980px, calc(100% - 2rem));
+            margin: 2rem auto;
+            background: var(--surface);
+            border: 1px solid var(--line);
+            border-radius: 24px;
+            padding: 2rem;
+            box-shadow: var(--shadow);
+        }
+
+        header {
+            border-bottom: 1px solid var(--line);
+            padding-bottom: 1rem;
+            margin-bottom: 1.2rem;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: clamp(1.9rem, 3vw, 2.5rem);
+            letter-spacing: -0.01em;
+        }
+
+        header p {
+            margin: 0.45rem 0 0;
+            color: var(--muted);
+        }
+
+        .article-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .article-list li {
+            margin-bottom: 0.7rem;
+            border: 1px solid var(--line);
+            border-radius: 12px;
+            padding: 0.9rem 1rem;
+            background: #fbfbfd;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+        }
+
+        .article-list li:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(17, 24, 39, 0.08);
+            border-color: #cfd2dc;
+        }
+
+        .article-title {
+            font-size: 1.05rem;
+            font-weight: 700;
+            margin-bottom: 0.2rem;
+        }
+
+        .article-meta {
+            font-size: 0.9rem;
+            color: var(--muted);
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .back {
+            margin-top: 1rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid var(--line);
+            border-radius: 10px;
+            padding: 0.52rem 0.92rem;
+            color: #2f2f32;
+            background: #ffffff;
+            text-decoration: none;
+        }
+
+        .back:hover {
+            background: #f4f4f6;
+            text-decoration: none;
+        }
+
+        @media (max-width: 640px) {
+            .container {
+                width: calc(100% - 1rem);
+                margin: 1rem auto;
+                border-radius: 16px;
+                padding: 1rem;
+            }
+
+            .article-list li {
+                padding: 0.75rem;
+            }
+
+            .article-title {
+                font-size: 1rem;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="dark-mode.css">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MTX5M07K9R"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-MTX5M07K9R');
+</script>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="legacy-theme.css" />
 </head>
 
-<body class="article-page no-cover template-links">
-    <div class="page-shell">
-        <header class="site-header">
-            <div class="brand">
-                <a href="index.html" class="brand-mark" aria-label="National Taiwan University home">
-                    <img src="images/logo/NTU-logo.svg" alt="National Taiwan University logo" class="brand-logo">
-                </a>
-                <div>
-                    <p class="eyebrow">National Taiwan University</p>
-                    <a href="index.html" class="brand-name">Gauss Chang</a>
-                </div>
-            </div>
-            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
-            <nav id="site-nav" class="site-nav" aria-label="Primary navigation">
-                <a href="index.html">Home</a>
-                <a href="CV.html">CV</a>
-                <a href="Projects.html">Projects</a>
-                <a href="Articles.html" aria-current="page">Articles</a>
-                <a href="index.html#contact">Contact</a>
-                      <a href="https://www.ntu.edu.tw" target="_blank" rel="noopener noreferrer">NTU</a>
-            </nav>
+<body>
+    <input type="checkbox" id="theme-toggle" class="theme-toggle-checkbox" aria-label="Toggle dark theme">
+    <label for="theme-toggle" class="theme-toggle-button">
+        <span class="theme-toggle-off">Dark</span>
+        <span class="theme-toggle-on">Light</span>
+    </label>
+
+    <div class="container">
+    
+        <header>
+            <h1>Japan Geoscience Union Meeting 2026</h1>
+            <p>Posted on 2026-02-09 · Gauss Te-Chuan Chang</p>
+            <p>Conference-related pages and updates for my participation in the JpGU-AGU Joint Meeting 2026.</p>
         </header>
 
-        <main class="container article-layout">
-            <header class="article-hero">
-                <p class="eyebrow">Conference</p>
-                <h1>Japan Geoscience Union Meeting 2026</h1>
-                <p class="meta">Posted on 2026-02-09 · Gauss Te-Chuan Chang</p>
-                <p class="lead">Conference-related pages and updates for my participation in the JpGU-AGU Joint Meeting 2026.</p>
-            </header>
-
-            <section class="section conference-index" data-reveal>
-                <div class="section-heading">
-                    <p class="section-label">Conference Pages</p>
-                    <h2>Session outlines, abstracts, and updates.</h2>
+        <ul class="article-list">
+            <li>
+                <div class="article-title">
+                    <a href="2026-S-CG56.html">S-CG56 Session Outline</a>
                 </div>
-
-                <div class="news-list">
-                    <article class="news-entry">
-                        <p class="timeline-date">Session Outline</p>
-                        <h2><a href="2026-S-CG56.html">S-CG56 Session Outline</a></h2>
-                        <p>Complex &amp; General · Slow and Fast Earthquakes Focus Group</p>
-                    </article>
-
-                    <article class="news-entry">
-                        <p class="timeline-date">Presentation</p>
-                        <h2><a href="Secondary-Weakening-in-dm-Scale-Laboratory-Earthquakes-Frictional-Origin-or-Rigid-Body-Artifact.html">Secondary Weakening in dm-Scale Laboratory Earthquakes: Frictional Origin or Rigid-Body Artifact?</a></h2>
-                        <p>Laboratory Earthquake Physics</p>
-                    </article>
-
-                    <article class="news-entry">
-                        <p class="timeline-date">Conference Update</p>
-                        <h2><a href="Article-8.html">Abstract Accepted for JpGU-AGU Joint Meeting 2026</a></h2>
-                        <p>Oral Presentation</p>
-                    </article>
+                <div class="article-meta">
+                    Complex & General · Slow and Fast Earthquakes Focus Group
                 </div>
-            </section>
-        </main>
+            </li>
 
-        <footer class="site-footer">
-            <p>© 2026 Gauss Chang.</p>
-            <a href="Articles.html">Articles</a>
-        </footer>
+            <li>
+                <div class="article-title">
+                    <a href="Secondary-Weakening-in-dm-Scale-Laboratory-Earthquakes-Frictional-Origin-or-Rigid-Body-Artifact.html">Secondary Weakening in dm-Scale Laboratory Earthquakes: Frictional Origin or Rigid-Body Artifact?</a>
+                </div>
+                <div class="article-meta">
+                    Presentation · Laboratory Earthquake Physics
+                </div>
+            </li>
+
+            <li>
+                <div class="article-title">
+                    <a href="Article-8.html">Abstract Accepted for JpGU-AGU Joint Meeting 2026</a>
+                </div>
+                <div class="article-meta">
+                    Conference update · Oral Presentation
+                </div>
+            </li>
+        </ul>
+    
+        <a class="back" href="Articles.html">← Back to Articles</a>
+    
     </div>
 
-    <script src="script.js"></script>
+    <script src="legacy-shell.js"></script>
 </body>
 
 </html>

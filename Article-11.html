@@ -187,9 +187,7 @@
             }
         }
     </style>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="article.css">
-    <!-- <link rel="stylesheet" href="dark-mode.css"> -->
+    <link rel="stylesheet" href="dark-mode.css">
 
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-MTX5M07K9R"></script>
@@ -200,49 +198,27 @@
 
     gtag('config', 'G-MTX5M07K9R');
 </script>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="legacy-theme.css" />
 </head>
 
-<body class="article-page article-page--zh no-cover template-prose">
-    <!--
+<body>
     <input type="checkbox" id="theme-toggle" class="theme-toggle-checkbox" aria-label="Toggle dark theme">
     <label for="theme-toggle" class="theme-toggle-button">
         <span class="theme-toggle-off">Dark</span>
         <span class="theme-toggle-on">Light</span>
     </label>
-    -->
 
-    <div class="page-shell">
-        <header class="site-header">
-            <div class="brand">
-                <a href="index.html" class="brand-mark" aria-label="National Taiwan University home">
-                    <img src="images/logo/NTU-logo.svg" alt="National Taiwan University logo" class="brand-logo" />
-                </a>
-                <div>
-                    <p class="eyebrow">National Taiwan University</p>
-                    <a href="index.html" class="brand-name">Gauss Chang</a>
-                </div>
-            </div>
-            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
-            <nav id="site-nav" class="site-nav" aria-label="Primary navigation">
-                <a href="index.html">Home</a>
-                <a href="CV.html">CV</a>
-                <a href="Projects.html">Projects</a>
-                <a href="Articles.html" aria-current="page">Articles</a>
-                <a href="index.html#contact">Contact</a>
-                      <a href="https://www.ntu.edu.tw" target="_blank" rel="noopener noreferrer">NTU</a>
-            </nav>
-        </header>
-
-    <main class="page article-layout">
+    <main class="page">
         <article class="article-shell">
-            <header class="hero article-hero">
+            <header class="hero">
                 <span class="eyebrow">Essay</span>
                 <h1>改變聽音樂的習慣</h1>
                 <div class="meta">Posted on 2022-08-08 · 張德權 · Student at Department of Physics, National Taiwan University</div>
                 <p class="lead">在串流音樂幾乎壟斷一切的時代，重新思考我們如何聽音樂，也許不只是個人習慣問題，而是和創作者、載體與專輯本身都有關。</p>
             </header>
 
-            <div class="content article-content">
+            <div class="content">
                 <h2>串流音樂可以隨時填補生活空白</h2>
                 <p>在串流音樂在給人們帶來更快速的音樂、帶給串流平台大量收入的同時也擠壓了音樂製作人的生存空間。以 iTunes 平均一首歌 0.99 美金舉例，實際支付給歌手的利潤大約在 0.5 美金、因地區而異；但是在串流平台上則是以「播放次數」作爲支付依據，價格因平台而異，但利潤普遍無法達到曾經的數位下載；另外據估計在 Spotify 平台上「一次都沒有被播放過」的音樂大約有 400 萬首。</p>
                 <figure>
@@ -277,17 +253,11 @@
                     串流音樂確實可以填補生活空白，但人生也沒有那麼多空白可以填；如果有，那你應該去充實你的人生。
                 </div>
 
+                <a class="back" href="Articles.html">← Back to Articles</a>
             </div>
         </article>
     </main>
-        <footer class="site-footer">
-            <p>© 2026 Gauss Chang.</p>
-            <a href="Articles.html">Articles</a>
-        </footer>
-    </div>
-
-    <script src="script.js"></script>
-
+    <script src="legacy-shell.js"></script>
 </body>
 
 </html>
