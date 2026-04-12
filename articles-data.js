@@ -4,7 +4,7 @@ window.ARTICLE_INDEX = [
     "href": "Article-16.html",
     "title": "The Ultimate Answer to Life, the Universe, and Everything",
     "date": "2026-04-12",
-    "summary": "Essay, Reflection, Placeholder",
+    "summary": "Essay, AI booming, LLM",
     "categories": [
       "personal"
     ]
