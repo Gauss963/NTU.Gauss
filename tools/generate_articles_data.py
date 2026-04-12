@@ -43,7 +43,7 @@ def shorten(text: str, limit: int = 120) -> str:
 
 def parse_first_body_paragraph(html: str) -> str:
     main_match = re.search(
-        r'<main class="container article-layout".*?>(.*?)</main>',
+        r'<main class="(?:page|container) article-layout".*?>(.*?)</main>',
         html,
         re.IGNORECASE | re.DOTALL,
     )
@@ -71,9 +71,15 @@ def infer_categories(title: str, meta_text: str, eyebrow: str) -> list[str]:
     haystack = " ".join([title, meta_text, eyebrow]).lower()
     categories: list[str] = []
 
-    if any(token in haystack for token in ["jpgu", "agu", "joint meeting", "presentation", "conference abstract"]):
-        categories.append("conference")
-    elif "conference" in eyebrow.lower():
+    if any(token in haystack for token in [
+        "jpgu",
+        "agu",
+        "joint meeting",
+        "geoscience union meeting",
+        "conference archive",
+        "conference",
+        "presentation"
+    ]):
         categories.append("conference")
 
     if any(token in haystack for token in ["english version", "translation", "translated"]):
@@ -93,7 +99,7 @@ def build_entry(path: Path) -> dict[str, object] | None:
 
     title = extract_first(r"<h1[^>]*>(.*?)</h1>", html)
     meta_text = extract_first(r'<(?:div|p)\s+class="meta"[^>]*>(.*?)</(?:div|p)>', html)
-    eyebrow = extract_first(r'<header class="article-hero".*?<p class="eyebrow"[^>]*>(.*?)</p>', html)
+    eyebrow = extract_first(r'<header class="article-hero".*?<(?:p|span) class="eyebrow"[^>]*>(.*?)</(?:p|span)>', html)
     date_match = re.search(r"Posted on\s+(\d{4}-\d{2}-\d{2})", meta_text, re.IGNORECASE)
 
     if not title or not date_match:

@@ -22,13 +22,47 @@ document.querySelectorAll("[data-reveal]").forEach((element) => {
 });
 
 const articleArchiveRoot = document.querySelector("#articles-archive");
+const homeLatestLink = document.querySelector("[data-home-latest-link]");
+const homeLatestMeta = document.querySelector("[data-home-latest-meta]");
+const homeLatestSummary = document.querySelector("[data-home-latest-summary]");
+
+function getSortedArticles() {
+  const articles = Array.isArray(window.ARTICLE_INDEX) ? [...window.ARTICLE_INDEX] : [];
+
+  articles.sort((left, right) => {
+    if (left.date === right.date) {
+      return left.title.localeCompare(right.title);
+    }
+    return right.date.localeCompare(left.date);
+  });
+
+  return articles;
+}
+
+function renderHomeLatestArticle() {
+  if (!homeLatestLink || !homeLatestMeta || !homeLatestSummary) {
+    return;
+  }
+
+  const articles = getSortedArticles();
+  const latestArticle = articles[0];
+
+  if (!latestArticle) {
+    return;
+  }
+
+  homeLatestLink.href = latestArticle.href;
+  homeLatestLink.textContent = latestArticle.title;
+  homeLatestMeta.textContent = `Posted on ${latestArticle.date} · ${latestArticle.summary}`;
+  homeLatestSummary.textContent = latestArticle.summary;
+}
 
 function renderArticlesArchive() {
   if (!articleArchiveRoot) {
     return;
   }
 
-  const articles = Array.isArray(window.ARTICLE_INDEX) ? [...window.ARTICLE_INDEX] : [];
+  const articles = getSortedArticles();
 
   if (articles.length === 0) {
     const emptyState = document.createElement("p");
@@ -37,13 +71,6 @@ function renderArticlesArchive() {
     articleArchiveRoot.replaceChildren(emptyState);
     return;
   }
-
-  articles.sort((left, right) => {
-    if (left.date === right.date) {
-      return left.title.localeCompare(right.title);
-    }
-    return right.date.localeCompare(left.date);
-  });
 
   const fragment = document.createDocumentFragment();
 
@@ -104,6 +131,7 @@ function renderArticlesArchive() {
   }
 }
 
+renderHomeLatestArticle();
 renderArticlesArchive();
 
 const navToggle = document.querySelector(".nav-toggle");
