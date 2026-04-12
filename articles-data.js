@@ -4,7 +4,8 @@ window.ARTICLE_INDEX = [
     "href": "Article-16.html",
     "title": "The Ultimate Answer to Life, the Universe, and Everything",
     "date": "2026-04-12",
-    "summary": "Essay, AI booming, LLM",
+    "meta": "Essay, AI booming, LLM",
+    "summary": "This is a placeholder opening for a longer essay.",
     "categories": [
       "personal"
     ]
@@ -13,7 +14,8 @@ window.ARTICLE_INDEX = [
     "href": "Article-7.html",
     "title": "My TOP 3 Movie",
     "date": "2026-04-03",
-    "summary": "Movies, Personal Favorites",
+    "meta": "Movies, Personal Favorites",
+    "summary": "These are three films I keep returning to when I want something quiet, beautiful, and emotionally memorable.",
     "categories": [
       "personal"
     ]
@@ -22,7 +24,8 @@ window.ARTICLE_INDEX = [
     "href": "Article-8.html",
     "title": "Abstract Accepted for JpGU-AGU Joint Meeting 2026",
     "date": "2026-04-03",
-    "summary": "Conference, Oral Presentation, JpGU, AGU",
+    "meta": "Conference, Oral Presentation, JpGU, AGU",
+    "summary": "My abstract, Secondary Weakening in dm-Scale Laboratory Earthquakes: Frictional Origin or Rigid-Body Artifact?, has...",
     "categories": [
       "conference"
     ]
@@ -31,7 +34,8 @@ window.ARTICLE_INDEX = [
     "href": "Article-15.html",
     "title": "My Top 5 TV Series",
     "date": "2026-04-02",
-    "summary": "TV series, Personal Favorites",
+    "meta": "TV series, Personal Favorites",
+    "summary": "These are five series I have kept returning to over the years.",
     "categories": [
       "personal"
     ]
@@ -40,6 +44,7 @@ window.ARTICLE_INDEX = [
     "href": "Article-6.html",
     "title": "Japan Geoscience Union Meeting 2026",
     "date": "2026-02-09",
+    "meta": "",
     "summary": "Conference-related pages and updates for my participation in the JpGU-AGU Joint Meeting 2026.",
     "categories": [
       "conference"
@@ -49,6 +54,7 @@ window.ARTICLE_INDEX = [
     "href": "Article-5.html",
     "title": "Gauss 2025 Reflection",
     "date": "2025-12-31",
+    "meta": "",
     "summary": "A year marked by research, conferences, friendships, and a series of small moments that made 2025 feel both busy and...",
     "categories": [
       "personal"
@@ -58,6 +64,7 @@ window.ARTICLE_INDEX = [
     "href": "Article-4.html",
     "title": "Japan Geoscience Union Meeting 2025",
     "date": "2025-12-17",
+    "meta": "",
     "summary": "Conference-related pages and updates for my participation in the Japan Geoscience Union Meeting 2025.",
     "categories": [
       "conference"
@@ -67,6 +74,7 @@ window.ARTICLE_INDEX = [
     "href": "Article-2.html",
     "title": "Goodbye, 2024 — A Letter To Myself, A Reflection",
     "date": "2025-01-01",
+    "meta": "",
     "summary": "A personal walk through the months of 2024, from quiet ordinary days to the moments that ended up shaping my year more...",
     "categories": [
       "personal"
@@ -76,6 +84,7 @@ window.ARTICLE_INDEX = [
     "href": "Article-3.html",
     "title": "November Sky",
     "date": "2024-12-01",
+    "meta": "",
     "summary": "November began with an endless Ising Model simulation. Then everyone started arguing about that overpass.",
     "categories": [
       "personal"
@@ -85,6 +94,7 @@ window.ARTICLE_INDEX = [
     "href": "Article-9.html",
     "title": "整個城市，都是我的自習室",
     "date": "2024-05-04",
+    "meta": "",
     "summary": "四月的暴雨、五月的太陽，都讓人只想待在有空調的室內。前幾天開車經過國圖才發現我已經好幾年沒進國圖自習室了。",
     "categories": [
       "personal"
@@ -94,6 +104,7 @@ window.ARTICLE_INDEX = [
     "href": "Article-10.html",
     "title": "Let the Whole City be My Library",
     "date": "2024-05-04",
+    "meta": "",
     "summary": "April downpours and May sunshine both make you want to stay somewhere air-conditioned.",
     "categories": [
       "translation"
@@ -103,6 +114,7 @@ window.ARTICLE_INDEX = [
     "href": "Article-11.html",
     "title": "改變聽音樂的習慣",
     "date": "2022-08-08",
+    "meta": "",
     "summary": "在串流音樂幾乎壟斷一切的時代，重新思考我們如何聽音樂，也許不只是個人習慣問題，而是和創作者、載體與專輯本身都有關。",
     "categories": [
       "personal"
@@ -112,6 +124,7 @@ window.ARTICLE_INDEX = [
     "href": "Article-12.html",
     "title": "Changing the Way We Listen to Music",
     "date": "2022-08-08",
+    "meta": "",
     "summary": "In an age when streaming seems to have absorbed music entirely, it may be worth asking whether the way we listen also...",
     "categories": [
       "translation"
@@ -121,6 +134,7 @@ window.ARTICLE_INDEX = [
     "href": "Article-13.html",
     "title": "臺北市兜風指南",
     "date": "2021-12-12",
+    "meta": "",
     "summary": "如果兜風是一種讓人暫時脫離現實、重新感受城市與自己的方式，那麼在臺北，選對時間與道路就非常重要。",
     "categories": [
       "personal"
@@ -130,6 +144,7 @@ window.ARTICLE_INDEX = [
     "href": "Article-14.html",
     "title": "A Guide to Driving Around Taipei",
     "date": "2021-12-12",
+    "meta": "",
     "summary": "If driving with no destination in mind is a way of stepping outside ordinary life for a while, then in Taipei the right...",
     "categories": [
       "translation"

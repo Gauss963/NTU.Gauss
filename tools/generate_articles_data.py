@@ -109,10 +109,8 @@ def build_entry(path: Path) -> dict[str, object] | None:
         return None
 
     keyword_match = re.search(r"Keywords:\s*(.+)$", meta_text, re.IGNORECASE)
-    if keyword_match:
-        summary = keyword_match.group(1).strip()
-    else:
-        summary = extract_first(r'<p class="lead"[^>]*>(.*?)</p>', html) or parse_first_body_paragraph(html)
+    meta_summary = keyword_match.group(1).strip() if keyword_match else ""
+    summary = extract_first(r'<p class="lead"[^>]*>(.*?)</p>', html) or parse_first_body_paragraph(html) or meta_summary
 
     summary = shorten(summary)
     categories = infer_categories(title, meta_text, eyebrow)
@@ -121,6 +119,7 @@ def build_entry(path: Path) -> dict[str, object] | None:
         "href": path.name,
         "title": title,
         "date": date_match.group(1),
+        "meta": meta_summary,
         "summary": summary,
         "categories": categories,
     }

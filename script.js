@@ -53,7 +53,9 @@ function renderHomeLatestArticle() {
 
   homeLatestLink.href = latestArticle.href;
   homeLatestLink.textContent = latestArticle.title;
-  homeLatestMeta.textContent = `Posted on ${latestArticle.date} · ${latestArticle.summary}`;
+  homeLatestMeta.textContent = latestArticle.meta
+    ? `Posted on ${latestArticle.date} · ${latestArticle.meta}`
+    : `Posted on ${latestArticle.date}`;
   homeLatestSummary.textContent = latestArticle.summary;
 }
 
