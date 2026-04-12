@@ -5,7 +5,7 @@ window.ARTICLE_INDEX = [
     "title": "The Ultimate Answer to Life, the Universe, and Everything",
     "date": "2026-04-12",
     "meta": "Essay, AI booming, LLM",
-    "summary": "After years of research, I have finally arrived at the ultimate answer to life, the universe, and everything,a nd the...",
+    "summary": "After years of research, I have finally arrived at the ultimate answer to life, the universe, and everything, and the...",
     "categories": [
       "personal"
     ]
