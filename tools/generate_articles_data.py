@@ -72,6 +72,14 @@ def infer_categories(title: str, meta_text: str, eyebrow: str) -> list[str]:
     categories: list[str] = []
 
     if any(token in haystack for token in [
+        "research paper",
+        "research article",
+        "journal article",
+        "research log",
+    ]):
+        categories.append("research")
+
+    if any(token in haystack for token in [
         "jpgu",
         "agu",
         "joint meeting",
@@ -85,7 +93,7 @@ def infer_categories(title: str, meta_text: str, eyebrow: str) -> list[str]:
     if any(token in haystack for token in ["english version", "translation", "translated"]):
         categories.append("translation")
 
-    if "conference" not in categories and "translation" not in categories:
+    if not categories:
         categories.append("personal")
 
     return categories
@@ -99,7 +107,11 @@ def build_entry(path: Path) -> dict[str, object] | None:
 
     title = extract_first(r"<h1[^>]*>(.*?)</h1>", html)
     meta_text = extract_first(r'<(?:div|p)\s+class="meta"[^>]*>(.*?)</(?:div|p)>', html)
-    eyebrow = extract_first(r'<header class="article-hero".*?<(?:p|span) class="eyebrow"[^>]*>(.*?)</(?:p|span)>', html)
+    eyebrow = extract_first(
+        r'<header[^>]*class="[^"]*\barticle-hero\b[^"]*"[^>]*>.*?'
+        r'<(?:p|span) class="eyebrow"[^>]*>(.*?)</(?:p|span)>',
+        html,
+    )
     date_match = re.search(r"Posted on\s+(\d{4}-\d{2}-\d{2})", meta_text, re.IGNORECASE)
 
     if not title or not date_match:

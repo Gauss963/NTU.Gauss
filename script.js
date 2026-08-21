@@ -107,12 +107,12 @@ function renderArticlesArchive() {
   }
 
   const totalCount = articles.length;
-  const conferenceCount = articles.filter((item) => item.categories.includes("conference")).length;
+  const researchCount = articles.filter((item) => item.categories.includes("research")).length;
   const translationCount = articles.filter((item) => item.categories.includes("translation")).length;
   const personalCount = articles.filter((item) => item.categories.includes("personal")).length;
 
   const totalNode = document.querySelector("[data-articles-total]");
-  const conferenceNode = document.querySelector("[data-articles-conference]");
+  const researchNode = document.querySelector("[data-articles-research]");
   const personalNode = document.querySelector("[data-articles-personal]");
   const translationNode = document.querySelector("[data-articles-translation]");
 
@@ -120,8 +120,8 @@ function renderArticlesArchive() {
     totalNode.textContent = String(totalCount);
   }
 
-  if (conferenceNode) {
-    conferenceNode.textContent = String(conferenceCount);
+  if (researchNode) {
+    researchNode.textContent = String(researchCount);
   }
 
   if (personalNode) {

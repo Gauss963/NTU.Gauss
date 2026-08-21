@@ -46,6 +46,34 @@ body.article-page.template-prose figure object {
   background: #ffffff;
 }
 
+body.article-page.template-prose .pdf-figure {
+  margin-top: 1.2rem;
+}
+
+body.article-page.template-prose .pdf-figure object {
+  height: min(72vh, 680px);
+  min-height: 520px;
+}
+
+body.article-page.template-prose .pdf-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.9rem;
+}
+
+body.article-page.template-prose .pdf-heading h3 {
+  margin: 0;
+}
+
+body.article-page.template-prose .pdf-heading a {
+  flex: 0 0 auto;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
 body.article-page.template-prose figcaption {
   margin-top: 0.8rem;
   color: var(--muted);
@@ -76,5 +104,16 @@ body.article-page.template-prose .summary-img {
 
   body.article-page.template-prose figure object {
     height: 360px;
+  }
+
+  body.article-page.template-prose .pdf-figure object {
+    height: 430px;
+    min-height: 430px;
+  }
+
+  body.article-page.template-prose .pdf-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.35rem;
   }
 }
