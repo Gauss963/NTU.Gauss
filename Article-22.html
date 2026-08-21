@@ -96,6 +96,39 @@
         background: rgba(23, 54, 93, 0.1);
         color: var(--accent);
       }
+      .math-block {
+        display: block;
+        margin: 1.2rem auto;
+        padding: 0.9rem 1.4rem;
+        background: var(--surface-soft);
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        text-align: center;
+        font-family: "Georgia", "Times New Roman", serif;
+        font-size: 1.05rem;
+        overflow-x: auto;
+        line-height: 2.2;
+      }
+      .frac {
+        display: inline-flex;
+        flex-direction: column;
+        vertical-align: middle;
+        text-align: center;
+        padding: 0 0.25em;
+        font-size: 0.9em;
+        line-height: 1;
+      }
+      .frac .top {
+        border-bottom: 1px solid currentColor;
+        padding-bottom: 2px;
+      }
+      .frac .bottom {
+        padding-top: 2px;
+      }
+      .parens {
+        font-size: 1.2em;
+        vertical-align: -0.05em;
+      }
       @media (max-width: 900px) {
         .diff-grid {
           grid-template-columns: 1fr;
@@ -172,11 +205,11 @@
             <ul>
               <li>
                 <strong>Chroma Subsampling (4:2:0):</strong> The full RGB color space is converted to YUV420p, immediately discarding
-                75% of chromatic spatial resolution by sharing single chrominance values across $2\times 2$ pixel clusters.
+                75% of chromatic spatial resolution by sharing single chrominance values across 2 &times; 2 pixel clusters.
               </li>
               <li>
-                <strong>DCT Quantization &amp; Macroblocking:</strong> Video encoders partition frames into $16\times 16$ or
-                $8\times 8$ macroblocks. High spatial frequency discrete cosine transform (DCT) coefficients are aggressively
+                <strong>DCT Quantization &amp; Macroblocking:</strong> Video encoders partition frames into 16 &times; 16 or
+                8 &times; 8 macroblocks. High spatial frequency discrete cosine transform (DCT) coefficients are aggressively
                 quantized because human vision tolerates high-frequency loss during motion—an assumption that completely fails
                 for static photography.
               </li>
@@ -190,15 +223,15 @@
             <h2>The VCR Experimental Pipeline</h2>
             <p>
               To isolate and visualize these distortions systematically without relying on subjective visual inspection, I designed
-              an automated Python workflow (<code>photo_denoise_workflow.py</code>) using FFmpeg and NumPy:
+              an automated Python workflow using FFmpeg and NumPy:
             </p>
 
             <div class="route-card">
-              <p><strong>1. Source Ingestion:</strong> Ingest an uncompressed still photograph ($I_{\text{orig}}$).</p>
+              <p><strong>1. Source Ingestion:</strong> Ingest an uncompressed still photograph (<em>I</em><sub>orig</sub>).</p>
               <p><strong>2. Video Encoding:</strong> Encode the still into a standard H.264 video stream (<code>libx264</code>, <code>yuv420p</code>, 1 fps) matching the native pixel dimensions of the source photograph for durations ranging from 45 seconds to 600 seconds.</p>
-              <p><strong>3. Single-Frame Extraction:</strong> Extract a target representative frame ($I_{\text{frame}}$ at frame index 10).</p>
-              <p><strong>4. Multi-Frame Temporal Stacking:</strong> Decompose all $N$ frames of the video and compute the temporal ensemble average:
-                \[I_{\text{stacked}} = \frac{1}{N}\sum_{k=1}^{N} I_k\]
+              <p><strong>3. Single-Frame Extraction:</strong> Extract a target representative frame (<em>I</em><sub>frame</sub> at frame index 10).</p>
+              <p><strong>4. Multi-Frame Temporal Stacking:</strong> Decompose all <em>N</em> frames of the video and compute the temporal ensemble average:
+                <span class="math-block"><em>I</em><sub>stacked</sub> = <span class="frac"><span class="top">1</span><span class="bottom"><em>N</em></span></span> &sum;<sub><em>k</em>=1</sub><sup><em>N</em></sup> <em>I</em><sub><em>k</em></sub></span>
                 This temporal stacking operates as a low-pass temporal filter to test whether multi-frame noise averaging can cancel encoder fluctuations and reconstruct lost high-frequency details.
               </p>
               <p><strong>5. Diagnostic Difference Mapping:</strong> Compute three distinct difference maps using FFmpeg's histogram-equalized difference filter:
@@ -211,7 +244,7 @@
               <p>
                 To protect personal privacy while providing maximal diagnostic clarity, no original photographs or raw video frames
                 are displayed on this page. All figures shown below are the <strong>histogram-equalized difference maps</strong>.
-                Applying histogram equalization stretching ($|A - B| \to \text{gray} \to \text{histeq}$) amplifies minute, sub-perceptual
+                Applying histogram equalization stretching (|<em>A</em> &minus; <em>B</em>| &rarr; gray &rarr; histeq) amplifies minute, sub-perceptual
                 quantization errors and phase shifts into high-contrast structural spectrograms, exposing macroblock boundaries,
                 ringing artifacts, and temporal drift patterns directly.
               </p>
@@ -221,17 +254,17 @@
             <p>For every test case, three difference maps are generated:</p>
             <ol>
               <li>
-                <strong>$D_{FO}$ (Original vs. Single Frame, <code>diff_fo</code>):</strong>
+                <strong><em>D</em><sub>FO</sub> (Original vs. Single Frame, <code>diff_fo</code>):</strong>
                 Quantifies total instantaneous single-frame degradation. It captures the combined distortion of 4:2:0 chroma downsampling,
                 DCT block truncation, and intra-frame quantization.
               </li>
               <li>
-                <strong>$D_{SO}$ (Original vs. Stacked Frame, <code>diff_so</code>):</strong>
+                <strong><em>D</em><sub>SO</sub> (Original vs. Stacked Frame, <code>diff_so</code>):</strong>
                 Quantifies the permanent, irreversible data loss. Because temporal stacking cancels out random frame-to-frame noise,
-                any residual difference that remains in $D_{SO}$ represents systematic, unrecoverable data erasure caused by the codec.
+                any residual difference that remains in <em>D</em><sub>SO</sub> represents systematic, unrecoverable data erasure caused by the codec.
               </li>
               <li>
-                <strong>$D_{FS}$ (Single Frame vs. Stacked Frame, <code>diff_fs</code>):</strong>
+                <strong><em>D</em><sub>FS</sub> (Single Frame vs. Stacked Frame, <code>diff_fs</code>):</strong>
                 Isolates intra-stream temporal noise and encoder jitter. It reveals how individual frames fluctuate over time despite the
                 input being an entirely static image.
               </li>
@@ -302,7 +335,7 @@
             <h3>CASE 1: Standard Mobile Story Format (720 × 1280)</h3>
             <p>
               CASE 1 simulates a standard 720p mobile story stream encoded for 45 seconds at 210 kbps. Because the spatial pixel
-              count is relatively low, standard $16\times 16$ macroblock units occupy a substantial physical percentage of the viewport.
+              count is relatively low, standard 16 &times; 16 macroblock units occupy a substantial physical percentage of the viewport.
             </p>
             <div class="diff-grid">
               <figure>
@@ -498,26 +531,26 @@
             <p>
               Static photo viewers render in full RGB 4:4:4 or high-quality JPEG chroma schemes. Standard video distribution, however,
               enforces YUV420p. In 4:2:0 subsampling, U and V chrominance channels are downsampled by a factor of 2 in both horizontal
-              and vertical dimensions. A $3024\times 4032$ image contains roughly 12.2 million luma ($Y$) samples, but only 3.05 million
-              chroma ($U, V$) samples. Fine chromatic boundaries—such as red text against dark backgrounds or delicate skin color transitions—suffer
-              an immediate 4× reduction in spatial fidelity before any DCT compression even begins.
+              and vertical dimensions. A 3024 &times; 4032 image contains roughly 12.2 million luma (<em>Y</em>) samples, but only 3.05 million
+              chroma (<em>U</em>, <em>V</em>) samples. Fine chromatic boundaries—such as red text against dark backgrounds or delicate skin color transitions—suffer
+              an immediate 4&times; reduction in spatial fidelity before any DCT compression even begins.
             </p>
 
             <h3>2. Loss of High Spatial Frequencies via DCT Quantization</h3>
             <p>
               Video codecs split frames into blocks and apply 2D Discrete Cosine Transforms:
-              \[F(u, v) = \sum_{x=0}^{N-1}\sum_{y=0}^{N-1} f(x, y) \cos\left[\frac{\pi}{N}\left(x+\frac{1}{2}\right)u\right]\cos\left[\frac{\pi}{N}\left(y+\frac{1}{2}\right)v\right]\]
-              The resulting frequency coefficients $F(u, v)$ are divided by a quantization matrix $Q(u, v)$ and rounded to the nearest integer.
-              In video codecs, $Q(u, v)$ heavily penalizes high-frequency $(u, v)$ terms because in moving video, the human visual system
+              <span class="math-block"><em>F</em>(<em>u</em>, <em>v</em>) = &sum;<sub><em>x</em>=0</sub><sup><em>N</em>&minus;1</sup> &sum;<sub><em>y</em>=0</sub><sup><em>N</em>&minus;1</sup> <em>f</em>(<em>x</em>, <em>y</em>) cos<span class="parens">[</span><span class="frac"><span class="top">&pi;</span><span class="bottom"><em>N</em></span></span>(<em>x</em> + <sup>1</sup>/<sub>2</sub>)<em>u</em><span class="parens">]</span> cos<span class="parens">[</span><span class="frac"><span class="top">&pi;</span><span class="bottom"><em>N</em></span></span>(<em>y</em> + <sup>1</sup>/<sub>2</sub>)<em>v</em><span class="parens">]</span></span>
+              The resulting frequency coefficients <em>F</em>(<em>u</em>, <em>v</em>) are divided by a quantization matrix <em>Q</em>(<em>u</em>, <em>v</em>) and rounded to the nearest integer.
+              In video codecs, <em>Q</em>(<em>u</em>, <em>v</em>) heavily penalizes high-frequency (<em>u</em>, <em>v</em>) terms because in moving video, the human visual system
               experiences temporal motion blur and cannot resolve fine textures. When applied to a static photo, this quantization zeroes out
               film grain, fabric textures, and subtle foliage details, turning them into flat blocks.
             </p>
 
             <h3>3. Irreversibility: Why Stacking Cannot Recover the Original</h3>
             <p>
-              In classical signal processing, if noise is zero-mean and uncorrelated ($\mathbb{E}[\epsilon] = 0$), averaging $N$ observations
-              reduces noise variance by a factor of $\sqrt{N}$. However, our comparison between $D_{FO}$ and $D_{SO}$ across all test cases
-              proves that video compression error is predominantly <strong>deterministic and systematic</strong> ($\mathbb{E}[\epsilon] \neq 0$).
+              In classical signal processing, if noise is zero-mean and uncorrelated (E[&epsilon;] = 0), averaging <em>N</em> observations
+              reduces noise variance by a factor of &radic;<em>N</em>. However, our comparison between <em>D</em><sub>FO</sub> and <em>D</em><sub>SO</sub> across all test cases
+              proves that video compression error is predominantly <strong>deterministic and systematic</strong> (E[&epsilon;] &ne; 0).
               Quantization is a truncation operator, not additive Gaussian noise. Once a high-frequency coefficient is quantized to zero,
               no amount of multi-frame averaging can restore the truncated information.
             </p>
@@ -534,7 +567,7 @@
               <li>
                 <strong>Pre-Render in High-Quality Video Containers:</strong> If music or motion is essential, do not let mobile app
                 transcoders perform real-time downsampling on the fly. Pre-render the photo and audio in a dedicated video editor using a high
-                bitrate ($>15\text{ Mbps}$), explicit color primaries (Rec.709), and optimal 1080×1920 canvas scaling to minimize double-compression artifacts.
+                bitrate (&gt; 15 Mbps), explicit color primaries (Rec.709), and optimal 1080 &times; 1920 canvas scaling to minimize double-compression artifacts.
               </li>
               <li>
                 <strong>Increase Contrast on Key Edges:</strong> Because 4:2:0 subsampling blurs chroma boundaries, high-contrast luminance
