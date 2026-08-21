@@ -42,6 +42,13 @@ Current examples:
 - `Article-12.html`
 - `Article-13.html`
 - `Article-14.html`
+- `Article-16.html`
+- `Article-17.html`
+- `Article-18.html`
+- `Article-19.html`
+- `Article-20.html`
+- `Article-21.html`
+- `Article-22.html`
 
 ### 2. `article-template-note.css`
 
